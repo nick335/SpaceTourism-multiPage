@@ -1,0 +1,59 @@
+@use '../abstract/mediaQuery.scss' as *;
+@use '../abstract/fonts.scss' as *;
+@use '../abstract/colors.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+
+@media #{$media-desktop}{
+  .crew-main{
+    margin: 0;
+    margin-left: 3rem;
+
+    &_head{
+
+      &-header{
+        font-size: 1.6rem;
+      }
+    }
+    &_body{
+      margin-top: 0;
+
+      .slide{
+        // display: none;
+
+        &_imgDiv{
+          margin-left: 0px;
+          padding-bottom: 0rem;
+          // display: none;
+
+          &-img{
+            width: 480px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$media-tablet-xl}{
+  .crew-main{
+    margin-left: 2.5rem;
+    margin-top: 40px;
+
+    &_body{
+      
+      .slide{
+        flex-direction: column;
+        // justify-content: ;
+        align-items: center;
+
+        &_imgDiv{
+          width: 100%;
+          @include justFlex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

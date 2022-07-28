@@ -1,0 +1,91 @@
+@use '../abstract/fonts.scss' as *;
+@use '../abstract/colors.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+.header{
+  padding: 2.5rem 0;
+  padding-left: 4rem;
+
+  .nav{
+    @include flexSpaceBetween;
+    align-items: center;
+    position: relative;
+
+    &_bar-div{
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(81.5485px);
+      z-index: 10;
+      padding: 33px 7.7rem;
+
+      .nav-lists{
+        @include flexCenter;
+        align-items: center;
+
+        .list{
+          margin-right: 48px;
+          color: $primary-color;
+          cursor: pointer;
+          position: relative;
+        }
+
+          .link{
+            color: $primary-color;
+            text-decoration: none;
+            font-family: $secondary-font;
+            font-weight: 400;
+            font-size: 1rem;
+            text-transform: uppercase;
+
+            &:after{
+              content: '';
+              position: absolute;
+              left: 50%;
+              bottom: -2px;
+              width: 0px;
+              height: 1.5px;
+              background: $primary-color;
+              transition: all 0.45s;
+            }
+  
+            @media(hover : hover){
+              &:hover:after{
+                width: 100%;
+                left: 0;
+              }
+
+            span{
+              padding-right: 9px;
+            }
+          }
+        }
+      }
+    }
+    &-line{
+      z-index: 20;
+      position: absolute;
+      left: 17%;
+      background: $primary-color;
+      mix-blend-mode: normal;
+      opacity: 0.25;
+      height: 1px;
+      width: 400px;
+    }
+    .navbar_toggle{
+      display: none;
+    }
+    .active{
+      // display: none;
+
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background: $primary-color;
+      }
+      
+    }
+  }
+}

@@ -1,0 +1,160 @@
+@use '../abstract/fonts.scss' as *;
+@use '../abstract/colors.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+.destination-main{
+  width: 100%;
+  overflow: hidden;
+  padding: 0 10rem;
+  margin-top: 4rem;
+  @include flexColumn;
+  align-items: flex-start;
+
+  &_head{
+
+    &-header{
+      font-family: $secondary-font;
+      font-weight: 400;
+      letter-spacing: 4.7px;
+      font-size: 2rem;
+      color: $primary-color;
+      text-transform: uppercase;
+
+      span{
+        padding-right: 28px;
+        mix-blend-mode: normal;
+        opacity: 0.25;
+        font-weight: 700;
+      }
+    }
+  }
+  &_body{
+    width: 100%;
+    @include flexSpaceBetween;
+    justify-content: space-between;
+    padding-top: 6rem;
+
+    &_imgDiv{
+     
+
+      &-img{
+        width: 445px;
+        height: 445px;
+        object-fit: cover;
+      }
+    }
+    &_contentDiv{
+      width: 445px;
+      margin-left: auto;
+      &-header{
+
+        &-lists{
+          @include flex;
+
+          .list{
+            padding-right: 35px;
+            cursor: pointer;
+
+            .head{
+              font-family: $secondary-font;
+              font-size: 1rem;
+              color: $secondary-color;
+              letter-spacing: 2.7px;
+              line-height: 19px;
+              position: relative;
+              text-transform: uppercase;
+
+              &:after{
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: -8px;
+                width: 0px;
+                height: 1.5px;
+                background: $secondary-color;
+                opacity: 0.6;
+                transition: all 0.45s;
+              }
+    
+              @media(hover : hover){
+                &:hover:after{
+                  width: 100%;
+                  left: 0;
+                }
+              }  
+            }
+          }
+          
+        }
+      }
+      &-body{
+        padding-top: 37px;
+
+        &-head{
+          font-family: $primary-font;
+          font-size: 6.5rem;
+          line-height: 100px;
+          font-weight: 400;
+          color: $primary-color;
+          text-transform: uppercase;
+        }
+        &-para{
+          font-family: $secondary-color;
+          color: $secondary-color;
+          font-weight: 400;
+          line-height: 32px;
+          padding-top: 22px;
+          padding-right: 75px;
+          padding-bottom: 34px;
+          border-bottom: 1px solid #383B4B;
+        }
+      }
+      &-footer{
+        @include justFlex;
+
+        &_dist,
+        &_time{
+          @include flexColumReverse;
+          padding-top: 28px;
+
+          h4{
+            font-family: $secondary-font;
+            font-size: 14px;
+            line-height: 17px;
+            letter-spacing: 2.4px;
+            text-transform: uppercase;
+            color: $secondary-color;
+            opacity: 0.2;
+            padding-bottom: 12px;
+          }
+          h3{
+            font-family: $primary-font;
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 32px;
+            text-transform: uppercase;
+            color: $primary-color;
+          }
+        }
+        &_dist{
+          padding-right: 74px;
+        }
+      }
+    }
+    .head.active{
+      color: $primary-color;
+  
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background: $primary-color;
+      }
+      
+    }
+  }
+ 
+}

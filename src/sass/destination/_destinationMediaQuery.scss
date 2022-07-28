@@ -1,0 +1,190 @@
+@use '../abstract/mediaQuery.scss' as *;
+@use '../abstract/fonts.scss' as *;
+@use '../abstract/colors.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+@media #{$media-desktop}{
+  .destination-main{
+    padding: 0 3rem;
+
+    &_head{
+
+      &-header{
+        font-size: 1.6rem;
+      }
+    }
+    &_body{
+      padding-bottom: 2rem;
+      padding-top: 4rem;
+    &_imgDiv{
+
+      &-img{
+        width: 400px;
+        height: 400px;
+      }
+    }
+    }
+  }
+}
+@media #{$media-tablet-xl}{
+  .destination-main{
+    padding: 0 2.5rem;
+
+    
+    &_body{
+      @include flexColumn;
+      align-items: center;
+      justify-content: center;
+
+      &_contentDiv{
+        width: 100%;
+        padding-top: 53px;
+        @include flexColumn;
+        justify-content: center;
+        align-items: center;
+
+        &-header{
+
+          &-lists{
+    
+            .list:last-child{
+              padding-right: 0;
+            }
+          }
+        }
+
+        &-body{
+
+          &-head{
+            text-align: center;
+            font-size: 5.5rem;
+          }
+          &-para{
+            margin: 0 8rem;
+            padding-right: 0px;
+            text-align: center;
+            padding-bottom: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+@media #{$media-tablet}{
+  .destination-main{
+
+    &_head{
+
+      &-header{
+        font-size: 1.25rem;
+        letter-spacing: 3.38px;
+
+        span{
+          padding-right: 19px;
+        }
+      }
+    }
+    &_body{
+
+      &_imgDiv{
+
+        &-img{
+          width: 300px;
+          height: 300px;
+        }
+      }
+      &_contentDiv{
+        margin-left: 0;
+
+        &-body{
+
+          &-head{
+            font-size: 5rem;
+            line-height: 92px;
+          }
+          &-para{
+            margin: 0 4rem;
+          }
+        }
+        &-footer{
+
+          &_dist{
+            padding-right: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+@media #{$media-mobile-sm}{
+  .destination-main{
+    padding: 0 1.5rem;
+    margin-top: 2rem;
+
+    &_head{
+      width: 100%;
+       @include justFlex;
+       justify-content: center;     
+
+      &-header{
+        text-align: center;
+        font-size: 1rem;
+        letter-spacing: 2.7px;
+      }
+    }
+    &_body{
+      padding-top: 2rem;
+      &_imgDiv{
+
+        &-img{
+          width: 175px;
+          height: 175px;
+        }
+      }
+      &_contentDiv{
+        padding-top: 26px;
+        &-header{
+
+          &-lists{
+
+            .list{
+
+              .head{
+                font-size: 14px;
+                letter-spacing: 2.4px;
+                line-height: 17px;
+              }
+            }
+          }
+        }
+        &-body{
+          padding-top: 20px;
+         &-head{
+          font-size: 3.5rem;
+          line-height: 64px;
+         }
+         &-para{
+          margin: 0;
+          font-size: 15px;
+          line-height: 25px;
+          padding-top: 5px;
+          padding-bottom: 20px;
+         }
+        }
+        &-footer{
+          @include flexColumn;
+
+          &_dist,
+          &_time{
+            align-items: center;
+            padding-top: 32px;
+          }
+
+          &_dist{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

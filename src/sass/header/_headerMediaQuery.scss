@@ -1,0 +1,157 @@
+@use '../abstract/mediaQuery.scss' as *;
+@use '../abstract/fonts.scss' as *;
+@use '../abstract/colors.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+
+@media #{$media-desktop}{
+    .header{
+      padding-left: 2.5rem;
+
+      .nav{
+
+        &_bar-div{
+          padding: 33px 4.5rem;
+
+          .nav-lists{
+
+            .list{
+              margin-right: 30px;
+            }
+
+            .link{
+              span{
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+
+        &-line{
+          width: 270px;
+          left: 20%;
+        }
+      }
+
+      
+    }
+}
+
+@media #{$media-tablet-xl}{
+  .header{
+    padding:0rem;
+    padding-left: 2.4rem;
+    .nav{
+
+      &_bar-div{
+        padding: 39px 4.8rem;
+      }
+      &-line{
+        display: none;
+      }
+    }
+  }
+}
+
+@media #{$media-tablet}{
+
+  .header{
+
+    .nav{
+
+      &_bar-div{
+
+        .nav-lists{
+
+          .link{
+
+            span{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media #{$media-mobile-sm}{
+  .header{
+    padding-left: 0;
+    padding: 1.5rem;
+
+    .nav{
+
+      &_bar-div{
+        position: fixed;
+        top: 0px;
+        right: -90%;
+        height: 100vh;
+        padding: 0;
+        width: 70%;
+        transition: all 0.2s ease-in;
+
+        .nav-lists{
+          @include flexColumn;
+          align-items: flex-start;
+          padding-top: 7.4rem;
+          padding-left: 3rem;
+
+          .list{
+            // margin-right: 0;
+            display: flex;
+            margin-bottom: 2rem;
+          }
+          .link{
+            @include flex;
+            span{
+              display: block;
+              padding-right: 12px;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      &_bar-div.is-active{
+        transition: all 0.2s ease-in;
+        right: 0%;
+        // animation: bringIn 0.2s ease-in  1;
+
+        // @keyframes bringIn {
+        //   0%
+          
+        // }
+      }
+      .navbar_toggle{
+        display: block;
+        z-index: 40;
+         
+        .bar{
+          width: 25px;
+          height: 2.5px;
+          margin: 5px auto;
+          transition: all 0.3s ease-in-out;
+          background: $secondary-color;
+          display: block;
+          cursor: pointer;
+          }
+      }
+      .navbar_toggle.is-active .bar:nth-child(2){
+        opacity: 0;
+       }
+       .navbar_toggle.is-active .bar:nth-child(1){
+        transform: translateY(7px) rotate(45deg);
+       }
+      .navbar_toggle.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+       }
+       .active{
+        display: none;
+
+        &:after{
+          display: none;
+        }
+       }
+    }
+
+  }
+}

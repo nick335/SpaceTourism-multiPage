@@ -1,0 +1,26 @@
+.page{
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  
+}
+.page-home{
+  background: url('../../images/home/background-home-desktop.jpg');
+  background-attachment: fixed;
+  height: 100%;  
+}
+.page-crew{
+  background: url('../../images/crew/background-crew-desktop.jpg');
+  background-attachment: fixed;  
+}
+.page-destination{
+  background: url('../../images/destination/background-destination-desktop.jpg');
+  background-attachment: fixed;  
+}
+.page-technology{
+  background: url('../../images/technology/background-technology-desktop.jpg');
+  background-attachment: fixed;  
+}

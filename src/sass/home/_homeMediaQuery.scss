@@ -1,0 +1,108 @@
+@use '../abstract/mediaQuery.scss' as *;
+@use '../abstract/fonts.scss' as *;
+@use '../abstract/colors.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+@media #{$media-desktop}{
+  .home-main{
+    margin: 0;
+    padding: 0 6rem;
+    padding-top: 3rem;
+
+    &_content-div{
+
+      &_header{
+        font-size: 1.55rem;
+      }
+      &_sub-header{
+        font-size: 8.5rem;
+      }
+      &_para{
+        width: 395px;
+      }
+    }
+  }
+}
+@media #{$media-tablet-xl}{
+  .home-main{
+    padding: 13rem 6rem;
+    @include flexColumn;
+    align-items: center;
+
+    &_content-div{
+      padding-bottom: 6rem;
+      @include flexColumn;
+      align-items: center;
+      &_header{
+        font-size: 1.75rem;
+        text-align: center;
+      }
+      &_sub-header{
+        font-size: 11rem;
+        padding-top: 32px;
+      }
+      &_para{
+        padding-top: 1rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media #{$media-tablet}{
+  .home-main{
+    padding: 0 6rem;
+    padding-top: 6.8rem;
+
+    &_content-div{
+      
+      &_header{
+        font-size: 1.25rem;
+      }
+      &_sub-header{
+        font-size: 9.4rem;
+        padding-top: 18px;
+      }
+      &_para{
+        padding-top: 0;
+      }
+    }
+    &_logo-div{
+      width: 242px;
+      height: 242px;
+    }
+  }
+}
+@media #{$media-mobile-sm}{
+  .home-main{
+    padding: 0;
+    padding-top: 1rem;
+
+    &_content-div{
+      padding-bottom: 4rem;
+      &_header{
+        font-size: 1.2rem;
+        letter-spacing: 2.7px;
+      }
+      &_sub-header{
+        font-size: 5rem;
+        padding-top: 0;
+        line-height: 100px;
+      }
+      &_para{
+        width: 100%;
+        padding: 0 29px;
+      }
+    }
+    &_logo-div{
+      width: 150px;
+      height: 150px;
+
+      &_header{
+        font-size: 20px;
+        letter-spacing: 1.25px;
+        line-height: 23px;
+      }
+    }
+  }
+}
