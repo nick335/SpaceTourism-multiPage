@@ -1,6 +1,7 @@
 import React from "react";
 import data from "./Data";
 import CrewSlides from "./CrewSlides";
+import { nanoid } from "nanoid";
 
 export default function Crew(){
   const [index, setIndex] = React.useState(0);
@@ -12,10 +13,11 @@ export default function Crew(){
               head = {each.role}
               sub_head = {each.name}
               para = {each.bio}
+              key = {nanoid()}
             />
   })
   const dots = Data.map((_, idx)=> {
-    return <div key={idx} className= {`slideshowDot ${index === idx ? " active" : ""}`} 
+    return <div key={nanoid()} className= {`slideshowDot ${index === idx ? " active" : ""}`} 
     onClick={() => {
       setIndex(idx);
     }}
