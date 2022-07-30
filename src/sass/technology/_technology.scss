@@ -1,0 +1,136 @@
+@use '../abstract/fonts.scss' as *;
+@use '../abstract/colors.scss' as *;
+@use '../abstract/mixins.scss' as *;
+
+.technology-main{
+  margin-top: 4rem;
+  margin-left: 10rem;
+
+  &_head{
+
+    &-header{
+      font-family: $secondary-font;
+      font-weight: 400;
+      letter-spacing: 4.7px;
+      font-size: 1.8rem;
+      line-height: 34px;
+      color: $primary-color;
+      text-transform: uppercase;
+
+      span{
+        padding-right: 20px;
+        mix-blend-mode: normal;
+        opacity: 0.25;
+        font-weight: 700;
+      }
+    }
+  }
+  &_body{
+    @include flex;
+    margin-top: 26px;
+    padding-bottom: 3rem;
+
+    &-controls{
+      margin-right: 80px;
+
+      .control{
+        width: 60px;
+        height: 60px;
+        border: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+        border-radius: 50%;
+        margin-bottom: 32px;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+
+        @media (hover :hover){
+          &:hover{
+            border-color: rgba($color: #ffffff, $alpha: 0.5);
+          }
+        }
+
+        .text{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: $primary-font;
+          font-size: 1.5rem;
+          font-weight: 400;
+          letter-spacing: 2px;
+          color: $primary-color;
+        }
+
+      }
+      .control.active{
+        border: none;
+        background-color: $primary-color;
+
+        .text{
+          color: $tertiary-color;
+        }
+      }
+    }
+
+    &-slides{
+      width: 88%;
+
+      .slideshow{
+        margin: 0 auto;
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .slideshowSlider {
+        white-space: nowrap;
+        transition: ease 1000ms;
+        width: 100%;
+      }
+
+      .slide{
+        display: inline-flex;
+        // justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        &_contentDiv{
+          white-space: normal;
+          &-header{
+            font-family: $secondary-font;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 400;
+            letter-spacing: 2.7px;
+            color: $secondary-color;
+            text-transform: uppercase;
+            padding-bottom: 11px;
+          }
+          &-subheader{
+            font-family:$primary-font;
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 64px;
+            color: $primary-color;
+            text-transform: uppercase;
+          }
+          &-para{
+            font-size: 1.13rem;
+            line-height: 32px;
+            font-family: $secondary-font;
+            font-weight: 400;
+            max-width: 444px;
+            color: $secondary-color;
+          }
+        }
+        &_imgDiv{
+          margin-left: auto;
+          margin-right: 0.009rem;
+          
+          &-img{
+            width: 515px;
+            height: 527px;
+            object-fit: fill;
+          }
+        }
+      }
+    }
+  }
+}

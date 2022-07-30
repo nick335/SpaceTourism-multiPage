@@ -13,6 +13,7 @@ export default function PageTemplate(){
 
   React.useEffect(() => {
       const child =location.pathname
+      setMenu(false)
       if(child === '/'){
         setPageBg('page-home')
       }

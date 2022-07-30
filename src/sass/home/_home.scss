@@ -44,6 +44,27 @@
     position: relative;
     background-color: $primary-color;
 
+    &:after{
+      content: '';
+      position: absolute;
+      top: -89px;
+      left: -88px;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background-color: $primary-color;
+      opacity: 0.1;
+      mix-blend-mode: normal;
+      display: none;
+      // z-index: 3;s
+    }
+    @media(hover : hover){
+      &:hover{
+        &:after{
+          display: block;
+        }
+      }
+    }
     &_header{
       position: absolute;
       top: 50%;
